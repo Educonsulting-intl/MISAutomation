@@ -26,7 +26,7 @@ public class BaseTest {
 		cap = new DesiredCapabilities();
 		cap.setBrowserName("chrome");
 		cap.setVersion("85.0");
-		cap.setCapability("enableVideo", false);
+		cap.setCapability("enableVideo", true);
 		driver = new RemoteWebDriver(new URL("http://192.168.18.22:4444/wd/hub"), cap);
 		//WebDriverManager.chromedriver().setup();
 		//driver = new ChromeDriver();
