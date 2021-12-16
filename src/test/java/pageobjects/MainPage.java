@@ -29,7 +29,7 @@ public class MainPage extends BasePage{
 		
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +38,7 @@ public class MainPage extends BasePage{
 	}
 	public void fillLoginDetails() {
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -47,7 +47,7 @@ public class MainPage extends BasePage{
 		type(passwordInput, "K6v5f3xx!");
 		click(submit);
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
