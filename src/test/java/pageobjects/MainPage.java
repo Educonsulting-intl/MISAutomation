@@ -16,6 +16,10 @@ public class MainPage extends BasePage{
 	WebElement submit;
 	@FindBy(css=".btn_expired")
 	WebElement expired;
+	@FindBy(css=".chooseAmountMain>div:nth-child(2)>.outOfStock")
+	WebElement blueIphone;
+	@FindBy(css=".fast.btn-1.joker")
+	WebElement fastButton;
 	public MainPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -25,7 +29,7 @@ public class MainPage extends BasePage{
 		
 		
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,7 +38,7 @@ public class MainPage extends BasePage{
 	}
 	public void fillLoginDetails() {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,13 +47,27 @@ public class MainPage extends BasePage{
 		type(passwordInput, "K6v5f3xx!");
 		click(submit);
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		waitForElementToBeVisible(expired);
 		
+		
+		try {
+			waitForElementToBeVisible(expired);
+		}catch (Exception e) {
+			
+			click(fastButton);
+			waitForElementToBeVisible(blueIphone);
+		}
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }
