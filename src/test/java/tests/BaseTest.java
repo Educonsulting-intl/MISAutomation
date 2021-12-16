@@ -27,9 +27,9 @@ public class BaseTest {
 		cap.setBrowserName("chrome");
 		cap.setVersion("85.0");
 		cap.setCapability("enableVideo", true);
-		//driver = new RemoteWebDriver(new URL("http://192.168.18.22:4444/wd/hub"), cap);
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		driver = new RemoteWebDriver(new URL("http://192.168.18.22:4444/wd/hub"), cap);
+		//WebDriverManager.chromedriver().setup();
+		//driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.htzone.co.il/item/70395/%D7%98%D7%9C%D7%A4%D7%95%D7%9F-%D7%A1%D7%9C%D7%95%D7%9C%D7%A8%D7%99--Apple--iPhone-13-Pro-128GB--%D7%90%D7%A4%D7%9C/#");
 		
