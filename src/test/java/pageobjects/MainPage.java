@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import bsh.Console;
+
 public class MainPage extends BasePage{
 
 	@FindBy(css=".popup_form.login_form.active>.popup_content_wrap>.popup_inputs_wrap>.form_label.must>.label_content>input[type='email']")
@@ -25,7 +27,7 @@ public class MainPage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void clickOnLogin() {
+	public Boolean clickOnLogin() {
 		
 		
 		try {
@@ -34,7 +36,12 @@ public class MainPage extends BasePage{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		if(driver.getCurrentUrl().equals("https://www.htzone.co.il/#")) {
+			return true;
+		}
+			
 		click(loginButton);
+		return false;
 	}
 	public void fillLoginDetails() {
 		try {
@@ -58,6 +65,7 @@ public class MainPage extends BasePage{
 			waitForElementToBeVisible(expired);
 		}catch (Exception e) {
 			
+			System.out.println(driver.getCurrentUrl());
 			click(fastButton);
 			waitForElementToBeVisible(blueIphone);
 		}
